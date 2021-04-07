@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - TopOfObject
+  - 
   - Water
   - UI
   - 
@@ -43,9 +43,6 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: TopOfobject
-    uniqueID: 2934135559
     locked: 0
   - name: GameObject
     uniqueID: 2359261451
