@@ -45,7 +45,7 @@ public class Turret : Enemy
     /// <summary>
     /// Distance the turret may detect to. 
     /// </summary>
-    private float seekRange = 2f;
+    private float seekRange = 5f;
 
     // Start is called before the first frame update
     void Start()
