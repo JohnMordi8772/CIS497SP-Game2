@@ -6,4 +6,5 @@ public abstract class Enemy : MonoBehaviour
 {
     public abstract IEnumerator Seek();
     public abstract IEnumerator Attack();
+    public abstract bool Detected();
 }

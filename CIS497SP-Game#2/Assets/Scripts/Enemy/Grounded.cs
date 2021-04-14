@@ -25,4 +25,9 @@ public class Grounded : Enemy
         throw new System.NotImplementedException();
     }
 
+    public override bool Detected()
+    {
+        return false;
+    }
+
 }

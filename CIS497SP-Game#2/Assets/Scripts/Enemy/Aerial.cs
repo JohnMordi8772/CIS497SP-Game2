@@ -25,4 +25,9 @@ public class Aerial : Enemy
     {
         throw new System.NotImplementedException();
     }
+
+    public override bool Detected()
+    {
+        return false;
+    }
 }

@@ -120,7 +120,7 @@ public class Turret : Enemy
     /// <summary>
     /// Is the player in sight?
     /// </summary>
-    private bool Detected()
+    public override bool Detected()
     {
         // Object first in line of sight
         RaycastHit2D[] hit = new RaycastHit2D[1];
