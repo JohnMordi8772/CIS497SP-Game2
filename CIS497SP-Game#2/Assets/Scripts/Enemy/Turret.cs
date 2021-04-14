@@ -40,12 +40,12 @@ public class Turret : Enemy
     /// <summary>
     /// Speed the barell rotates at
     /// </summary>
-    private float rotSpeed = 10f;
+    private float rotSpeed = 30f;
 
     /// <summary>
     /// Distance the turret may detect to. 
     /// </summary>
-    private float seekRange = 5f;
+    private float seekRange = 15f;
 
     // Start is called before the first frame update
     void Start()
@@ -127,13 +127,20 @@ public class Turret : Enemy
 
         // Objects the linecast can hit
         ContactFilter2D contactFilter = new ContactFilter2D();
-        contactFilter.NoFilter();
 
         // End of linecast
         Vector3 lookEnd = firingDistRef.position;
         // Cast in direction of look
         Physics2D.Linecast(transform.position, lookEnd, contactFilter, hit);
 
-        return (hit[0] == true);
+        if (hit[0] == true)
+        {
+            if (hit[0].collider.tag == "Player")
+                return true;
+            else
+                return false;
+        }
+
+        return false;
     }
 }

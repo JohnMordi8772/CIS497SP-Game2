@@ -7,7 +7,7 @@ public class Projectile : MonoBehaviour
     private float timeLimit = 4f;
     private float fadeTime = 3.2f;
 
-    private float speed = 2f;
+    private float speed = 25f;
 
     private void Awake()
     {
