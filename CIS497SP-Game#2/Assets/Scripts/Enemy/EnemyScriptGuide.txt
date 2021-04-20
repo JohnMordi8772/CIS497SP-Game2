@@ -1,0 +1,23 @@
+Projectile - Behavior for projectile objects. In this project, may be attached to a baseball or softball. 
+
+Enemy Attack - abstract 
+Baseball Attack - Turret that shoots baseballs at the player
+Softball Attack - Turret that shoots softballs at the player (DO NOT HAVE)
+Bat Attack - Bat dive bombs player 
+Slide Attack - Baseball player charges/slides into player
+
+Enemy Seek - abstract
+Turret Seek - Oscillates barrel back and forth
+Aerial Seek - (NOT COMPLETED) Should float around a bit
+Ground Seek - Go back and forth on platform, switch direction when on cliff or hitting wall
+
+Enemy - abstract
+TODO: Enemies need to be separated into different classes for different types for the strategy pattern in the final. 
+Aerial 
+--> Bat
+Turret
+--> Softball turret
+--> Baseball turret
+Grounded 
+--> Sliding player
+--> Hitting Player 

@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Turret : Enemy
 {
+    public enum State { ATTACK, SEEK}
+
+    private EnemyAttack attack;
+    private EnemySeek seek;
+
+    private LayerMask playerLayer;
+
     /// <summary>
     /// Barrel of the turret
     /// </summary>
@@ -19,102 +26,66 @@ public class Turret : Enemy
     private Transform playerPos;
 
     /// <summary>
-    /// Original location the turret is looking at. 
-    /// </summary>
-    private Vector2 originalLookEnd;
-
-    /// <summary>
-    /// Direction the bareel is rotating in
-    /// </summary>
-    private int rotDir = 1;
-    
-    /// <summary>
-    /// Maximum negative rotation of the barrel
-    /// </summary>
-    private float minRot = -0.5f;
-    /// <summary>
-    /// Maximum positiove position of the barrel
-    /// </summary>
-    private float maxRot = 0.2f;
-
-    /// <summary>
-    /// Speed the barell rotates at
-    /// </summary>
-    private float rotSpeed = 30f;
-
-    /// <summary>
     /// Distance the turret may detect to. 
     /// </summary>
     private float seekRange = 15f;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         barrel = transform.Find("Barrel");
         barrelEnd = barrel.transform.Find("Visual");
         firingDistRef = barrel.transform.Find("EndRef");
         firingDistRef.position += (Vector3.left * seekRange);
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+        playerLayer = LayerMask.NameToLayer("Player");
 
-        StartCoroutine(Seek());
+        seek = gameObject.AddComponent<TurretSeek>() as TurretSeek;
+        seek.Initialize(this);
+        attack = gameObject.AddComponent<BaseballAttack>() as BaseballAttack;
+        attack.Initialize(this);
+
+        SwitchState(State.SEEK);
     }
 
-    public override IEnumerator Seek()
+    /// <summary>
+    /// Switch the current behavior
+    /// </summary>
+    /// <param name="next">Behavior to switch to</param>
+    public void SwitchState(State next)
     {
-        while (!Detected())
+        switch (next)
         {
-            // Rotate barrel
-            float newRot = (rotSpeed * Time.deltaTime) * rotDir;
-            barrel.Rotate(new Vector3(transform.rotation.x, transform.rotation.y, transform.rotation.z - newRot));
-
-            float currRot = barrel.rotation.z;
-
-            // Switch drection if end reached
-            if (currRot > maxRot)
-                rotDir *= -1;
-            if (currRot < minRot)
-                rotDir *= -1;
-
-            yield return null;
+            case (State.ATTACK):
+                StartCoroutine(attack.Attack());
+                break;
+            case (State.SEEK):
+                StartCoroutine(seek.Seek());
+                break;
         }
-
-        StartCoroutine(Attack());
-        yield break;
     }
 
-    [Tooltip("The projectile the turret shoots.")]
-    public GameObject projectile;
-
     /// <summary>
-    /// Delay between shots
+    /// Barrel's transform
     /// </summary>
-    private float shootDelay = .4f;
-
-    /// <summary>
-    /// Second delay the player has to move out of line of fire. 
-    /// </summary>
-    private float playerGrace = 0.09f;
-
-    public override IEnumerator Attack()
+    public Transform GetBarrel()
     {
-        while (Detected())
-        {
-            // Rotate to player
-            Vector2 delta = transform.position - playerPos.position;
-            float angle = Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg;
-            Quaternion rot = Quaternion.Euler(new Vector3(0, 0, angle));
+        return barrel;
+    }
 
-            barrel.transform.rotation = rot;
+    /// <summary>
+    /// Player's transform
+    /// </summary>
+    public Transform GetPlayerPos()
+    {
+        return playerPos;
+    }
 
-            yield return new WaitForSeconds(playerGrace);
-            Instantiate(projectile, barrelEnd.position, barrelEnd.rotation);
-
-            yield return new WaitForSeconds(shootDelay);
-        }
-
-        StartCoroutine(Seek());
-        yield break;
-        
+    /// <summary>
+    /// End of the barrel
+    /// </summary>
+    public Transform GetBarrelEnd()
+    {
+        return barrelEnd;
     }
 
     /// <summary>
@@ -122,23 +93,14 @@ public class Turret : Enemy
     /// </summary>
     public override bool Detected()
     {
-        // Object first in line of sight
-        RaycastHit2D[] hit = new RaycastHit2D[1];
-
-        // Objects the linecast can hit
-        ContactFilter2D contactFilter = new ContactFilter2D();
-
         // End of linecast
         Vector3 lookEnd = firingDistRef.position;
         // Cast in direction of look
-        Physics2D.Linecast(transform.position, lookEnd, contactFilter, hit);
+        RaycastHit2D hit = Physics2D.Linecast(transform.position, lookEnd, (1<<playerLayer));
 
-        if (hit[0] == true)
+        if (hit)
         {
-            if (hit[0].collider.tag == "Player")
-                return true;
-            else
-                return false;
+            return true;
         }
 
         return false;
