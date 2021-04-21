@@ -19,11 +19,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (focused)
-        {
-            mouseX += Input.GetAxis("Mouse X");
-            mouseY += Input.GetAxis("Mouse Y");
-        }
         //text.text = "Mouse Y: " + mouseY + " Mouse X: " + mouseX;
         //if (Input.GetAxisRaw("Mouse X") != 0 && Input.GetAxisRaw("Mouse Y") != 0)
         //{
