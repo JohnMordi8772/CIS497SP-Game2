@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6489240127421192938}
   - component: {fileID: 8481526918579866569}
   - component: {fileID: 8195479568498366837}
+  - component: {fileID: 2984795225954478809}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Enemy
@@ -97,7 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  rngHit: 0
 --- !u!70 &8195479568498366837
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -114,3 +114,24 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0024108887, y: 0}
   m_Size: {x: 0.24623719, y: 0.55}
   m_Direction: 0
+--- !u!50 &2984795225954478809
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3199074514098692883}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

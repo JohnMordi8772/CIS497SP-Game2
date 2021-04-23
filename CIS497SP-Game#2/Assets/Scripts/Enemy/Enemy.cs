@@ -14,4 +14,10 @@ public abstract class Enemy : MonoBehaviour
         if (health <= 0)
             Destroy(gameObject);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "RngAtk")
+            TakeDamage(collision.GetComponent<RangedAttack>().dmg);
+    }
 }

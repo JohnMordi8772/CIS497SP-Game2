@@ -3037,10 +3037,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bat
       objectReference: {fileID: 0}
-    - target: {fileID: 8195479568498366837, guid: 15b8dae82b67ffd4ea386962fab886f0, type: 3}
-      propertyPath: m_Direction
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15b8dae82b67ffd4ea386962fab886f0, type: 3}
 --- !u!1 &519420028
@@ -14354,10 +14350,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 657611624, guid: 9d7915fd028d5ea48a9556b64da64ef0, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2696030866045839830, guid: 9d7915fd028d5ea48a9556b64da64ef0, type: 3}
       propertyPath: m_Name
       value: Ground Enemy
@@ -14408,32 +14400,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d7915fd028d5ea48a9556b64da64ef0, type: 3}
---- !u!1 &2024695527 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3199074514098692883, guid: 15b8dae82b67ffd4ea386962fab886f0, type: 3}
-  m_PrefabInstance: {fileID: 482223855}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &2024695532
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2024695527}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &2049720568
 GameObject:
   m_ObjectHideFlags: 0
