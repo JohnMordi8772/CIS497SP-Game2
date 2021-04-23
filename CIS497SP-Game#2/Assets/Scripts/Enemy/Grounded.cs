@@ -61,7 +61,7 @@ public class Grounded : Enemy
         // Detect if player is ahead
         Vector3 lookEnd = transform.position;
         lookEnd.x *= direction * detectDistance;
-        RaycastHit2D hit = Physics2D.Linecast(transform.position, lookEnd, (1<<playerLayer));
+        RaycastHit2D hit = Physics2D.Linecast(transform.position, new Vector2(lookEnd.x - 10, lookEnd.y), (1 << playerLayer));//lookEnd, (1<<playerLayer));
 
         if (hit)
         {
