@@ -18,12 +18,12 @@ public class BaseballAttack : EnemyAttack
     /// <summary>
     /// Delay between shots
     /// </summary>
-    private float shootDelay = .4f;
+    private float shootDelay = 1.1f;
 
     /// <summary>
     /// Second delay the player has to move out of line of fire. 
     /// </summary>
-    private float playerGrace = 0.09f;
+    private float playerGrace = 0.3f;
 
     /// <summary>
     /// Create a new attack that shoots baseballs
