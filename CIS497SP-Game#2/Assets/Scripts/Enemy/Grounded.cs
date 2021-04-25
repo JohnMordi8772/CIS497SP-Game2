@@ -43,9 +43,11 @@ public class Grounded : Enemy
         switch (next)
         {
             case (State.ATTACK):
+                Debug.Log(gameObject.name + " is attacking.");
                 StartCoroutine(attack.Attack());
                 break;
             case (State.SEEK):
+                Debug.Log(gameObject.name + " is seeking.");
                 StartCoroutine(seek.Seek());
                 break;
         }
@@ -60,8 +62,8 @@ public class Grounded : Enemy
     {
         // Detect if player is ahead
         Vector3 lookEnd = transform.position;
-        lookEnd.x *= direction * detectDistance;
-        RaycastHit2D hit = Physics2D.Linecast(transform.position, new Vector2(lookEnd.x - 10, lookEnd.y), (1 << playerLayer));//lookEnd, (1<<playerLayer));
+        lookEnd.x += (direction * 15);
+        RaycastHit2D hit = Physics2D.Linecast(transform.position, new Vector2(lookEnd.x, lookEnd.y), (1 << playerLayer));//lookEnd, (1<<playerLayer));
 
         if (hit)
         {

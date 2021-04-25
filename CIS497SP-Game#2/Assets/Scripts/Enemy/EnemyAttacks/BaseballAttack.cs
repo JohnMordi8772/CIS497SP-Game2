@@ -34,7 +34,7 @@ public class BaseballAttack : EnemyAttack
     public override void Initialize(Enemy turret)
     {
         this.turret = (Turret)turret;
-        Initialize(this.turret.GetPlayerPos(), this.turret.GetBarrelEnd(), this.turret.GetBarrel());
+        Initialize(this.turret.GetBarrelEnd(), this.turret.GetPlayerPos(), this.turret.GetBarrel());
 
         // Get projectile prefab from files
         projectile = Resources.Load<GameObject>("Prefabs/projectile");

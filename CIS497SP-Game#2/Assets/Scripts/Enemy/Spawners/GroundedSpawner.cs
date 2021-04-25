@@ -6,7 +6,6 @@ public class GroundedSpawner : EnemySpawner
 {
     public override void SpawnEnemy()
     {
-        Debug.Log("Getting here.");
         GameObject grounded = Resources.Load<GameObject>("Prefabs/Ground Enemy");
         // Spawn turret 
         Instantiate(grounded, transform.position, Quaternion.identity);

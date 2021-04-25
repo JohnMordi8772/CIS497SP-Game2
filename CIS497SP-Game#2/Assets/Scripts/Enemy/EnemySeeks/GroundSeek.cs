@@ -19,6 +19,7 @@ public class GroundSeek : EnemySeek
     /// Layer the ground platforms are on
     /// </summary>
     private LayerMask platformLayer;
+    private SpriteRenderer sr;
 
     /// <summary>
     /// </summary>
@@ -28,6 +29,7 @@ public class GroundSeek : EnemySeek
         this.grounded = (Grounded)grounded;
         groundedSize = grounded.GetComponent<Collider2D>().bounds.extents;
         platformLayer = LayerMask.NameToLayer("Platform");
+        sr = grounded.GetComponent<SpriteRenderer>();
     }
     
     public override IEnumerator Seek()
@@ -35,7 +37,7 @@ public class GroundSeek : EnemySeek
         // Wait for player to get into range before attacking
         while(!grounded.Detected())
         {
-            // Move in set direction
+            // Move in set directions
             grounded.transform.Translate(Vector2.right * grounded.direction * speed * Time.deltaTime);
 
             Vector3 pos = grounded.transform.position;
@@ -52,14 +54,16 @@ public class GroundSeek : EnemySeek
             Collider2D spaceHit = Physics2D.OverlapBox(checkPos, groundedSize * 2, 0, (1<<platformLayer));
             if (!spaceHit)
             {
+                sr.flipX = !sr.flipX;
                 grounded.direction *= -1;
             }
 
             // Check if there is a barrier ahead
-            Vector3 end = new Vector3(pos.x + (grounded.direction), pos.y, 0);
+            Vector3 end = new Vector3(pos.x + (grounded.direction * 10), pos.y, 0);
             RaycastHit2D barrierHit = Physics2D.Linecast(pos, end, (1<<platformLayer));
             if(barrierHit)
             {
+                sr.flipX = !sr.flipX;
                 grounded.direction *= -1;
             }
 
