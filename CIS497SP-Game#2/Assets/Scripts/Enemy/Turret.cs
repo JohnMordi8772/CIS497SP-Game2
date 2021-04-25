@@ -38,6 +38,7 @@ public class Turret : Enemy
         firingDistRef.position += (Vector3.left * seekRange);
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         playerLayer = LayerMask.NameToLayer("Player");
+        gm = FindObjectOfType<GameManager>();
 
         seek = gameObject.AddComponent<TurretSeek>() as TurretSeek;
         seek.Initialize(this);

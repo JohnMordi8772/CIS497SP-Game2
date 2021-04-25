@@ -5,6 +5,8 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
     public float health = 3;
+
+    public GameManager gm;
     //public bool rngHit = false;
     public abstract bool Detected();
 
@@ -12,7 +14,11 @@ public abstract class Enemy : MonoBehaviour
     {
         health -= dmg;
         if (health <= 0)
+        {
+            gm.UpdatePoints();
             Destroy(gameObject);
+        }
+            
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

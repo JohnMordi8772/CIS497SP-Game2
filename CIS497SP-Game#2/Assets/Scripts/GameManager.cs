@@ -7,6 +7,9 @@ public class GameManager : Singleton<GameManager>
 {
     int currentScene;
     public GameObject mainMenu, pauseMenu;
+
+    private PointManager pointsManager = new PointManager();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,12 @@ public class GameManager : Singleton<GameManager>
             else
                 pauseMenu.SetActive(false);
         }
+    }
+
+    public void UpdatePoints()
+    {
+        pointsManager.AddPoints();
+        Debug.Log(pointsManager.GetPoints());
     }
 
     public void LoadLevel(int sceneIndex)
