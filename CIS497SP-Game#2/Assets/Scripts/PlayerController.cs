@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class PlayerController : MonoBehaviour
     private bool rngAtkCD = true, meleeAtkCD = true;
     public GameObject attackPoint;
     private Vector3 checkPoint;
+
+    public Text winCondition;
+    public Text cooldown;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -96,7 +101,13 @@ public class PlayerController : MonoBehaviour
         float angle = Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg;
         Instantiate(projectile, gameObject.transform.position, Quaternion.Euler(new Vector3(0, 0, angle)));
 
-        yield return new WaitForSeconds(3);
+        cooldown.text = "Cooldown: ---";
+        yield return new WaitForSeconds(1);
+        cooldown.text = "Cooldown: O--";
+        yield return new WaitForSeconds(1);
+        cooldown.text = "Cooldown: OO-";
+        yield return new WaitForSeconds(1);
+        cooldown.text = "Cooldown: OOO";
 
         rngAtkCD = true;
 
@@ -155,6 +166,11 @@ public class PlayerController : MonoBehaviour
         if(collision.tag == "Checkpoint")
         {
             checkPoint = collision.transform.position;
+        }
+
+        if(collision.tag == "Win")
+        {
+            winCondition.text = "YOU WIN!";
         }
     }
 }
