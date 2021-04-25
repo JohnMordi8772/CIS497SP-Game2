@@ -4,7 +4,6 @@ using UnityEngine;
 
 public abstract class Points
 {
-    public Points() { }
     public virtual int PointsEarned()
     {
         return 0;

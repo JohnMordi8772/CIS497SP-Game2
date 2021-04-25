@@ -6,7 +6,7 @@ public abstract class Enemy : MonoBehaviour
 {
     public float health = 3;
 
-    public GameManager gm;
+    public InGameUIManager ui;
     //public bool rngHit = false;
     public abstract bool Detected();
 
@@ -15,7 +15,7 @@ public abstract class Enemy : MonoBehaviour
         health -= dmg;
         if (health <= 0)
         {
-            gm.UpdatePoints();
+            ui.UpdatePoints();
             Destroy(gameObject);
         }
             

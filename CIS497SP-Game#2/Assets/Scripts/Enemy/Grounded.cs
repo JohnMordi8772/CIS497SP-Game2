@@ -22,7 +22,7 @@ public class Grounded : Enemy
     void Awake()
     {
         playerLayer = LayerMask.NameToLayer("Player");
-        gm = FindObjectOfType<GameManager>();
+        ui = FindObjectOfType<InGameUIManager>();
 
         // TODO make this change to be direction towards player on spawning
         direction = -1;

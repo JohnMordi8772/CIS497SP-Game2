@@ -16,7 +16,7 @@ public class Aerial : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        gm = FindObjectOfType<GameManager>();
+        ui = FindObjectOfType<InGameUIManager>();
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
 
         seek = gameObject.AddComponent<AerialSeek>() as AerialSeek;
