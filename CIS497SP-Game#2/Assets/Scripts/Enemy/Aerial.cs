@@ -1,3 +1,8 @@
+/* (Ashton Lively) 
+ * (Aerial) 
+ * (Project 6) 
+ * (What we place onto the aerial enemy to make it work properly and attack etc.) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -1,3 +1,8 @@
+/* (Ashton Lively) 
+ * (TurretSeek) 
+ * (Project 6) 
+ * (This allows the turret to aim at the player and follow their actions) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

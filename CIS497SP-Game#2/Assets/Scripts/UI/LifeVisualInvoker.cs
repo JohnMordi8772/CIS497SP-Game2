@@ -1,3 +1,8 @@
+/* (John Mordi) 
+ * (LifeVisualInvoker) 
+ * (Project 6) 
+ * (This is what actually commands the AddLife script) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

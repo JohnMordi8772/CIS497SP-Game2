@@ -1,3 +1,8 @@
+/* (John Mordi) 
+ * (CameraFollow) 
+ * (Project 6) 
+ * (Makes the camera follow the player) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

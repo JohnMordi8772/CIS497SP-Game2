@@ -1,3 +1,8 @@
+/* (Ashton Lively) 
+ * (Spawner) 
+ * (Project 6) 
+ * (This helps decide what enemy is spawned in) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

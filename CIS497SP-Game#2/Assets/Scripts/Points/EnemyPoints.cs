@@ -1,3 +1,8 @@
+/* (John Mordi) 
+ * (EnemyPoints) 
+ * (Project 6) 
+ * (Gives points when an enemy is defeated) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

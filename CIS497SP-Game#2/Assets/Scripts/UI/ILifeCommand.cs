@@ -1,3 +1,8 @@
+/* (John Mordi) 
+ * (ILifeCommand) 
+ * (Project 6) 
+ * (Parent Class for AddLife) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

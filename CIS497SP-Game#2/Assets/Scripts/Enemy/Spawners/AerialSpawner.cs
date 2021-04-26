@@ -1,3 +1,8 @@
+/* (Ashton Lively) 
+ * (AerialSpawner) 
+ * (Project 6) 
+ * (This spawns in the aerial enemy at a location) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -1,3 +1,8 @@
+/* (Ashton Lively) 
+ * (Bat Attack) 
+ * (Project 6) 
+ * (This allows the bat enemy to attack the player) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

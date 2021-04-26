@@ -1,3 +1,8 @@
+/* (Ashton Lively) 
+ * (GroundSeek) 
+ * (Project 6) 
+ * (This lets the ground based enemy follow the character around) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

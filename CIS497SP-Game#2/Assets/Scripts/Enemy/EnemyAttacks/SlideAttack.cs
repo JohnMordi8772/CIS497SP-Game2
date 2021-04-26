@@ -1,3 +1,8 @@
+/* (Ashton Lively) 
+ * (SlideAttack) 
+ * (Project 6) 
+ * (Makes the sliding enemies attack) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

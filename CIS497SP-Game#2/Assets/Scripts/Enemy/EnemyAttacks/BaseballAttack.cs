@@ -1,3 +1,8 @@
+/* (Ashton Lively) 
+ * (BaseballAttack) 
+ * (Project 6) 
+ * (This allows the player to attack with a ranged attack) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -1,3 +1,8 @@
+/* (John Mordi) 
+ * (LifeVisualManager) 
+ * (Project 6) 
+ * (This manages the adding and removal of the lives visually) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -1,3 +1,8 @@
+/* (Ashton Lively) 
+ * (EnemySpawner) 
+ * (Project 6) 
+ * (This spawns in the enemy when it comes into contact with the player) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

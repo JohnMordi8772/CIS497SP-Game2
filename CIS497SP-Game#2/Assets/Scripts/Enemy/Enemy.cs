@@ -1,3 +1,8 @@
+/* (Ashton Lively) 
+ * (Enemy) 
+ * (Project 6) 
+ * (Parent class for enemies that allow them to take damage and such) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

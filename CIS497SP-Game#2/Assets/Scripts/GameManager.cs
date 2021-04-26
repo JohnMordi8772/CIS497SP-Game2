@@ -1,3 +1,8 @@
+/* (John Mordi) 
+ * (GameManager) 
+ * (Project 6) 
+ * (This is the menu system and loading in and out of scenes) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

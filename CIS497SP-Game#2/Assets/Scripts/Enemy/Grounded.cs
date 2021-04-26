@@ -1,3 +1,8 @@
+/* (Ashton Lively) 
+ * (Grounded) 
+ * (Project 6) 
+ * (We attach this to the Grounded enemy to make it move and attack) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

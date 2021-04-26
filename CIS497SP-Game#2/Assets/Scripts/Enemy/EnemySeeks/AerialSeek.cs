@@ -1,3 +1,8 @@
+/* (Ashton Lively) 
+ * (AerialSeek) 
+ * (Project 6) 
+ * (This has the aerial enemy follow the player to attack them) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

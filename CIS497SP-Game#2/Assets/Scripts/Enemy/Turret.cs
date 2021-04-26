@@ -1,3 +1,9 @@
+/* (Ashton Lively) 
+ * (Turret) 
+ * (Project 6) 
+ * (This is the script we attach to the turret to make it work properly) */
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

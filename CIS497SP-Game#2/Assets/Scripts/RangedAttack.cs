@@ -1,3 +1,9 @@
+/* (John Mordi) 
+ * (Ranged Attack) 
+ * (Project 6) 
+ * (Lets the player throw out a ranged attack) */
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

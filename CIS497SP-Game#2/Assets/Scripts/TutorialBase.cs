@@ -1,3 +1,8 @@
+/* (John Mordi) 
+ * (TutorialBase) 
+ * (Project 6) 
+ * (This is what works the player through the tutorial teaching them everything) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

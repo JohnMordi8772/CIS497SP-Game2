@@ -1,3 +1,8 @@
+/* (John Mordi) 
+ * (Singleton) 
+ * (Project 6) 
+ * (Base Singleton Class) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

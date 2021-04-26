@@ -1,3 +1,8 @@
+/* (Ashton Lively) 
+ * (GroundedSpawner) 
+ * (Project 6) 
+ * (This spawns in the ground enemy at a location) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

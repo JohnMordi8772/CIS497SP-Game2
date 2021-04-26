@@ -1,3 +1,8 @@
+/* (John Mordi) 
+ * (AddLife) 
+ * (Project 6) 
+ * (This adds lives and removes them from the screen) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

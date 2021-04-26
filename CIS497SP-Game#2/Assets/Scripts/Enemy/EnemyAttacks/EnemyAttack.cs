@@ -1,3 +1,8 @@
+/* (Ashton Lively) 
+ * (EnemyAttack) 
+ * (Project 6) 
+ * (Parent class of Enemy Attacks) */
+
 using System.Collections;
 using UnityEngine;
 

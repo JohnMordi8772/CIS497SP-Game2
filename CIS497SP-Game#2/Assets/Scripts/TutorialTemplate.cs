@@ -1,3 +1,8 @@
+/* (John Mordi) 
+ * (TutorialTemplate) 
+ * (Project 6) 
+ * (This is what starts up the tutorial level of the game) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

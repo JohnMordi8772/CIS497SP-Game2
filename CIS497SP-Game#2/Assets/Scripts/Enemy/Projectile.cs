@@ -1,3 +1,8 @@
+/* (Ashton Lively) 
+ * (Projectile) 
+ * (Project 6) 
+ * (Holds all the values of the projectile and makes it move and deal damage) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -1,3 +1,8 @@
+/* (John Mordi) 
+ * (Player Controller) 
+ * (Project 6) 
+ * (Basic Player movement as well as how the player interacts with the world) */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
