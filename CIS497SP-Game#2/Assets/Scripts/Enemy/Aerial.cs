@@ -12,7 +12,7 @@ public class Aerial : Enemy
     public enum State { ATTACK, SEEK }
 
     private EnemyAttack attack;
-    private EnemySeek seek;
+    public EnemySeek seek;
 
     private Transform playerPos;
 

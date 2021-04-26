@@ -9,13 +9,23 @@ using UnityEngine;
 
 public class AerialSpawner : EnemySpawner
 {
+    ObjectPooler objectPooler;
+    bool alreadySpawned = false;
+
+    private void Awake()
+    {
+        objectPooler = gameObject.GetComponent<ObjectPooler>();
+    }
+
     public override void SpawnEnemy()
     {
-        GameObject aerial = Resources.Load<GameObject>("Prefabs/Bat");
-        // Spawn turret 
-        Instantiate(aerial, transform.position, Quaternion.identity);
-
-        // Attach script to turret
-        // TODO
+        GameObject enemy = objectPooler.SpawnFromPool();
+        if (enemy != null && !alreadySpawned)
+        {
+            Instantiate(enemy, transform.position, Quaternion.identity);
+            alreadySpawned = true;
+        }
+        //GameObject aerial = Resources.Load<GameObject>("Prefabs/Bat");
+        //Instantiate(aerial, transform.position, Quaternion.identity);
     }
 }

@@ -243,7 +243,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+  objectPooler: {fileID: 0}
   ui: {fileID: 0}
+  seek: {fileID: 0}
 --- !u!61 &-9151068224818235429
 BoxCollider2D:
   m_ObjectHideFlags: 0

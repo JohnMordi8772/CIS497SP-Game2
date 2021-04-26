@@ -11,6 +11,8 @@ public abstract class Enemy : MonoBehaviour
 {
     public float health;
 
+    public ObjectPooler objectPooler;
+
     public InGameUIManager ui;
     //public bool rngHit = false;
     public abstract bool Detected();
@@ -26,7 +28,8 @@ public abstract class Enemy : MonoBehaviour
         if (health <= 0)
         {
             ui.UpdatePoints();
-            Destroy(gameObject);
+            objectPooler.ReturnToPool(gameObject);
+            //Destroy(gameObject);
         }
             
     }

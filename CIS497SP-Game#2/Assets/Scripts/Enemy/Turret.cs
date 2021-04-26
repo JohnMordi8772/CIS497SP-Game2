@@ -13,7 +13,7 @@ public class Turret : Enemy
     public enum State { ATTACK, SEEK}
 
     private EnemyAttack attack;
-    private EnemySeek seek;
+    public EnemySeek seek;
 
     private LayerMask playerLayer;
 

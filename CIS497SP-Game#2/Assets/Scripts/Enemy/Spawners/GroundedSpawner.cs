@@ -9,13 +9,24 @@ using UnityEngine;
 
 public class GroundedSpawner : EnemySpawner
 {
+    ObjectPooler objectPooler;
+    bool alreadySpawned = false;
+
+    private void Awake()
+    {
+        objectPooler = gameObject.GetComponent<ObjectPooler>();
+    }
+
     public override void SpawnEnemy()
     {
-        GameObject grounded = Resources.Load<GameObject>("Prefabs/Ground Enemy");
-        // Spawn turret 
-        Instantiate(grounded, transform.position, Quaternion.identity);
+        GameObject enemy = objectPooler.SpawnFromPool();
+        if (enemy != null && !alreadySpawned)
+        {
+            Instantiate(enemy, transform.position, Quaternion.identity);
+            alreadySpawned = true;
+        }
+        //GameObject grounded = Resources.Load<GameObject>("Prefabs/Ground Enemy");
 
-        // Attach script to turret
-        // TODO
+        //Instantiate(grounded, transform.position, Quaternion.identity);
     }
 }
