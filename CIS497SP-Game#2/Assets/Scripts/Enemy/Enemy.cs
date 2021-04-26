@@ -1,4 +1,4 @@
-/* (Ashton Lively) 
+/* (Ashton Lively, John Mordi) 
  * (Enemy) 
  * (Project 6) 
  * (Parent class for enemies that allow them to take damage and such) */
