@@ -1,4 +1,4 @@
-/* (Ashton Lively) 
+/* (Ashton Lively, John Mordi) 
  * (TurretSpawner) 
  * (Project 6) 
  * (This spawns in the turret at a location) */

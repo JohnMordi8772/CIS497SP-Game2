@@ -1,4 +1,4 @@
-/* (John Mordi) 
+/* (John Mordi, Luke Alcazar, George Tang, Ashton Lively) 
  * (Player Controller) 
  * (Project 6) 
  * (Basic Player movement as well as how the player interacts with the world) */

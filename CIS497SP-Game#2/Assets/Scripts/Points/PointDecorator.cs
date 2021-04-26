@@ -1,4 +1,4 @@
-/* (John Mordi) 
+/* (Ashton Lively)
  * (PointDecorator) 
  * (Project 6) 
  * (The decorator for the point system) */

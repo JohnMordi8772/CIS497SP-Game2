@@ -1,4 +1,4 @@
-/* (John Mordi) 
+/* (Ashton Lively) 
  * (LifeVisualManager) 
  * (Project 6) 
  * (This manages the adding and removal of the lives visually) */

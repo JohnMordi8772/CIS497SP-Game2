@@ -1,3 +1,7 @@
+/* (John Mordi) 
+ * (ObjectPooler) 
+ * (Project 6) 
+ * (Limits the spawning of enemies) */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

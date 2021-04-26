@@ -30,23 +30,4 @@ public class RangedAttack : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.tag == "Enemy")
-    //    {
-    //        Enemy enemy = collision.GetComponent<Enemy>();
-    //        //if(!enemy.rngHit)
-    //        //{
-    //        //enemy.rngHit = true;
-    //        enemy.TakeDamage(dmg);
-    //        //}
-    //    }
-    //}
-
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.tag == "Enemy")
-    //        other.GetComponent<Enemy>().rngHit = false;
-    //}
 }

@@ -1,4 +1,4 @@
-/* (Ashton Lively) 
+/* (Ashton Lively, John Mordi) 
  * (AerialSpawner) 
  * (Project 6) 
  * (This spawns in the aerial enemy at a location) */

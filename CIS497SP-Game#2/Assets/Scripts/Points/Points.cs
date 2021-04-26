@@ -1,4 +1,4 @@
-/* (John Mordi) 
+/* (Ashton Lively)
  * (Points) 
  * (Project 6) 
  * (Gives the appropriate amount of points) */

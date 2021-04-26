@@ -1,4 +1,4 @@
-/* (John Mordi) 
+/* (Ashton Lively) 
  * (LifeVisualInvoker) 
  * (Project 6) 
  * (This is what actually commands the AddLife script) */

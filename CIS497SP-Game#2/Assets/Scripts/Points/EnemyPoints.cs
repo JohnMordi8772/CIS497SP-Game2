@@ -1,4 +1,4 @@
-/* (John Mordi) 
+/* (Ashton Lively) 
  * (EnemyPoints) 
  * (Project 6) 
  * (Gives points when an enemy is defeated) */

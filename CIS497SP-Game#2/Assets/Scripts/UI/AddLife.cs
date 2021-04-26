@@ -1,4 +1,4 @@
-/* (John Mordi) 
+/* (Ashton Lively) 
  * (AddLife) 
  * (Project 6) 
  * (This adds lives and removes them from the screen) */

@@ -1,4 +1,4 @@
-/* (John Mordi) 
+/* (Ashton Livley, John Mordi) 
  * (InGameUIManager) 
  * (Project 6) 
  * (As it says in title this manages the majority of the big UI stuff, like Lives) */

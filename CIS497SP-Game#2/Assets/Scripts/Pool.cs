@@ -1,3 +1,7 @@
+/* (John Mordi) 
+ * (Pool) 
+ * (Project 6) 
+ * (Classifies what the object pooler is using) */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -1,4 +1,4 @@
-/* (Ashton Lively) 
+/* (Ashton Lively, John Mordi) 
  * (GroundedSpawner) 
  * (Project 6) 
  * (This spawns in the ground enemy at a location) */

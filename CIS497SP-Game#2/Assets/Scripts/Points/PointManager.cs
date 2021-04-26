@@ -1,4 +1,4 @@
-/* (John Mordi) 
+/* (Ashton Lively)
  * (PointManager) 
  * (Project 6) 
  * (Manages the general give and take of points) */

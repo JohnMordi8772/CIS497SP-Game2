@@ -1,4 +1,4 @@
-/* (John Mordi) 
+/* (Ashton Lively)
 * (PlayerPoints) 
 * (Project 6) 
 * (returns the amount of points the player has earned) */

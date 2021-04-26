@@ -1,4 +1,4 @@
-/* (John Mordi) 
+/* (Ashton Lively) 
  * (ILifeCommand) 
  * (Project 6) 
  * (Parent Class for AddLife) */
