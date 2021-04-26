@@ -20,9 +20,15 @@ public class GameManager : Singleton<GameManager>
         if (Input.GetKeyDown(KeyCode.P) && currentScene != 0)
         {
             if (!pauseMenu.activeSelf)
+            {
                 pauseMenu.SetActive(true);
+                Time.timeScale = 0;
+            }
             else
+            {
                 pauseMenu.SetActive(false);
+                Time.timeScale = 1;
+            }
         }
     }
 
@@ -51,5 +57,12 @@ public class GameManager : Singleton<GameManager>
         pauseMenu.SetActive(false);
         mainMenu.SetActive(true);
 
+    }
+
+    public void RestartLevel()
+    {
+        int tempLevel = currentScene;
+        UnLoadCurrentLevel();
+        LoadLevel(tempLevel);
     }
 }

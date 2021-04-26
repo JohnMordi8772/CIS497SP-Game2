@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour
     private bool focused = false;
     private bool rngAtkCD = true, meleeAtkCD = true;
     public GameObject attackPoint;
-    private Vector3 checkPoint;
+    Vector3 checkPoint;
+    float jumps;
 
     public Text winCondition;
     public Text cooldown;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
     {
         rigidBody = gameObject.GetComponent<Rigidbody2D>();
         checkPoint = gameObject.transform.position;
+        jumps = 2;
     }
 
     // Update is called once per frame
@@ -33,6 +35,7 @@ public class PlayerController : MonoBehaviour
         if(gameObject.transform.position.y < -70)
         {
             gameObject.transform.position = checkPoint;
+            FindObjectOfType<InGameUIManager>().UpdatePlayerHealth();
         }
         if (Input.GetMouseButtonDown(0) && meleeAtkCD) 
         {
@@ -61,9 +64,10 @@ public class PlayerController : MonoBehaviour
             //} 
 
         }
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && jumps != 0)
         {
             rigidBody.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+            jumps--;
         }
         if (Input.GetKey(KeyCode.A))
         {
@@ -101,13 +105,13 @@ public class PlayerController : MonoBehaviour
         float angle = Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg;
         Instantiate(projectile, gameObject.transform.position, Quaternion.Euler(new Vector3(0, 0, angle)));
 
-        cooldown.text = "Cooldown: ---";
+        cooldown.text = "Ranged Cooldown: ---";
         yield return new WaitForSeconds(1);
-        cooldown.text = "Cooldown: O--";
+        cooldown.text = "Ranged Cooldown: O--";
         yield return new WaitForSeconds(1);
-        cooldown.text = "Cooldown: OO-";
+        cooldown.text = "Ranged Cooldown: OO-";
         yield return new WaitForSeconds(1);
-        cooldown.text = "Cooldown: OOO";
+        cooldown.text = "Ranged Cooldown: OOO";
 
         rngAtkCD = true;
 
@@ -137,13 +141,13 @@ public class PlayerController : MonoBehaviour
             
             
 
-        //GameObject spawned = Instantiate(meleeAtk, gameObject.transform.position, Quaternion.Euler(new Vector3(0, 0, angle-90)), gameObject.transform);
-        //spawned.transform.Translate(Vector2.up * 3);
+        GameObject spawned = Instantiate(meleeAtk, gameObject.transform.position, Quaternion.Euler(new Vector3(0, 0, angle-90)), gameObject.transform);
+        spawned.transform.Translate(Vector2.up * 3);
 
         yield return new WaitForSeconds(0.5f);
         attackPoint.transform.rotation = Quaternion.Euler(Vector3.zero);
         attackPoint.transform.position = gameObject.transform.position;
-        //Destroy(spawned);
+        Destroy(spawned);
 
         
 
@@ -171,6 +175,22 @@ public class PlayerController : MonoBehaviour
         if(collision.tag == "Win")
         {
             winCondition.text = "YOU WIN!";
+            winCondition.gameObject.SetActive(true);
+            Time.timeScale = 0;
+            FindObjectOfType<GameManager>().pauseMenu.SetActive(true);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Platform" && collision.gameObject.transform.position.y <= gameObject.transform.position.y)
+        {
+            jumps = 2;
+        }
+    }
+
+    public Vector3 GetCheckpoint()
+    {
+        return checkPoint;
     }
 }

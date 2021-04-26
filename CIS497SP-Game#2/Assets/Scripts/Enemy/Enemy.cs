@@ -4,11 +4,16 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
-    public float health = 3;
+    public float health;
 
     public InGameUIManager ui;
     //public bool rngHit = false;
     public abstract bool Detected();
+
+    private void Awake()
+    {
+        health = 2;
+    }
 
     public void TakeDamage(float dmg)
     {

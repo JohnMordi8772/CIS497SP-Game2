@@ -10,7 +10,14 @@ public class InGameUIManager : MonoBehaviour
     private PointManager pointsManager;
 
     private int playerHealthMax = 3;
+    private int playerLivesMax = 2;
+    public Text livesText;
     private int currPlayerHealth;
+    private int currPlayerLives;
+
+    public PlayerController player;
+
+    public Text lossText;
 
     [Tooltip("Text display number of points.")]
     public Text points;
@@ -21,6 +28,7 @@ public class InGameUIManager : MonoBehaviour
         Time.timeScale = 1;
 
         currPlayerHealth = playerHealthMax;
+        currPlayerLives = playerLivesMax;
         lives = gameObject.AddComponent<LifeVisualManager>();
         lives.SetVals(this);
         pointsManager = gameObject.AddComponent<PointManager>();
@@ -36,11 +44,24 @@ public class InGameUIManager : MonoBehaviour
         currPlayerHealth--;
 
         lives.RemoveLife();
-
-        if (currPlayerHealth == 0)
+        if(currPlayerHealth == 0 && currPlayerLives != 0)
+        {
+            livesText.text = "Lives: " + currPlayerLives;
+            currPlayerLives--;
+            for (int i = 0; i < playerHealthMax; i++)
+            {
+                lives.AddLife();
+                currPlayerHealth++;
+            }
+            player.transform.position = player.GetCheckpoint();
+        }
+        else if (currPlayerHealth == 0 && currPlayerLives == 0)
         {
             Debug.Log("Player has died.");
+            lossText.text = "You have no lives left.\nTry again?";
+            lossText.gameObject.SetActive(true);
             Time.timeScale = 0;
+            FindObjectOfType<GameManager>().pauseMenu.SetActive(true);
         }
     }
 

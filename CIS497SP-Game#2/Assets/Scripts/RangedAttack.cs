@@ -16,9 +16,9 @@ public class RangedAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.Translate(Vector3.left * Time.deltaTime * 15);
+        gameObject.transform.Translate(Vector3.left * Time.deltaTime * 30);
         //Debug.Log(Vector3.Distance(pos, gameObject.transform.position));
-        if (Vector3.Distance(gameObject.transform.position, pos) > 30)
+        if (Vector3.Distance(gameObject.transform.position, pos) > 20)
         {
             //Debug.Log(Vector3.Distance(pos, gameObject.transform.position));
             Destroy(gameObject);

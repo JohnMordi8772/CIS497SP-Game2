@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - RngAtk
   - Win
+  - Platform
   layers:
   - Default
   - TransparentFX
