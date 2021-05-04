@@ -21,6 +21,8 @@ public class SlideAttack : EnemyAttack
     /// </summary>
     private float graceTime = .1f;
 
+    private bool canDamage = false;
+
     /// <summary>
     /// </summary>
     /// <param name="grounded">Enemy that is attacking</param>
@@ -38,6 +40,8 @@ public class SlideAttack : EnemyAttack
     {
         yield return new WaitForSeconds(graceTime);
 
+        canDamage = true;
+
         // Launch in move direction
         rgbd.AddForce(slideForce * grounded.direction, ForceMode2D.Impulse);
 
@@ -45,12 +49,15 @@ public class SlideAttack : EnemyAttack
 
         grounded.SwitchState(Grounded.State.SEEK);
 
+        yield return new WaitForSeconds(2f);
+        canDamage = false;
+
         yield break;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && canDamage)
         {
             FindObjectOfType<InGameUIManager>().UpdatePlayerHealth();
         }
@@ -58,7 +65,7 @@ public class SlideAttack : EnemyAttack
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && canDamage)
         {
             FindObjectOfType<InGameUIManager>().UpdatePlayerHealth();
         }
