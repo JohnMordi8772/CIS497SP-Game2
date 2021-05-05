@@ -6105,8 +6105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 108d0ccdd9126e345887866003e266b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 8286141158486485698, guid: 98ff1d36793de884c834914d743e9bd1, type: 3}
-  meleeAtk: {fileID: 3870033829328735898, guid: 8d425c0f870a33c4e9755f042947edc0, type: 3}
+  projectile: {fileID: 1138674143903955863, guid: 40eb72ed6aaacca4da98998d922bf1a1, type: 3}
+  meleeAtk: {fileID: 5820768839564816456, guid: b4f7d007f3ac3a944a7de1f96bae3d36, type: 3}
   cam: {fileID: 519420031}
   attackPoint: {fileID: 2084319504}
   winCondition: {fileID: 595111867}
